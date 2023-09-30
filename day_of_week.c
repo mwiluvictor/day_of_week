@@ -15,12 +15,9 @@ int main()
 
 	a = y % 100;
 	b = y / 100;
-	sum =	a + a/4 + d;
+	sum = a + a/4 + d;
 	
 	century_sum(b);
-
-	i = new%7;
-
 	day_of_week(i);
 
 	return 0;
@@ -72,6 +69,7 @@ int century_sum(int)
 
 void day_of_week(int)
 {
+	i = new%7;
 	printf("THE DAY OF THE WEEK OF %d-%d-%d : ", d, m, y);
 	
 	if(i == 0)
@@ -88,7 +86,6 @@ void day_of_week(int)
 		printf("Thursday");
 	else 
 		printf("Friday");
-		
 }
 
 
