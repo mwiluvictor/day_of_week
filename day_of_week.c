@@ -8,6 +8,7 @@ int month_sum(int);
 int century_sum(int);
 void day_of_week(int);
 
+
 int main()
 {
 	printf("Input the date in the format dd-mm-yyyy :\n");
@@ -67,6 +68,7 @@ int century_sum(int)
 
 }
 
+
 void day_of_week(int)
 {
 	i = new%7;
@@ -87,5 +89,4 @@ void day_of_week(int)
 	else 
 		printf("Friday");
 }
-
 
