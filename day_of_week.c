@@ -4,28 +4,32 @@
 int  a, b, d, m, y;
 int i, sum, new, n_sum;
 
+int month_sum(int);
+int century_sum(int);
+void day_of_week(int);
+
 int main()
 {
 	printf("Input the date in the format dd-mm-yyyy :\n");
-  scanf("%d-%d-%d", &d, &m, &y);
+ 	scanf("%d-%d-%d", &d, &m, &y);
 
 	a = y % 100;
 	b = y / 100;
 	sum =	a + a/4 + d;
 	
-  int month_sum();
-	int century_sum();
+	century_sum(b);
 
 	i = new%7;
-	char day_of_week();
+
+	day_of_week(i);
 
 	return 0;
 }
 
 
-int month_sum(int m)
+int month_sum(int)
 {
-	if((m == 1 && (y%4 == 0 && y%100 != 0 || y&400 == 0 )) || (m == 4) || (m == 7)) 
+	if(((m == 1) && (((y%4 == 0) && (y%100 != 0)) || (y%400 == 0 ))) || (m == 4) || (m == 7)) 
 		n_sum = sum;
 	else if(m == 1 || m == 10)
 		n_sum  = sum + 1;
@@ -41,13 +45,16 @@ int month_sum(int m)
 		n_sum = sum + 6;
 	else 
 		printf("Wrong format, please try again!!");
-
+	
+	return n_sum;
 		
 }
 
 
-int century_sum(int b)
+int century_sum(int)
 {	
+	month_sum(m);
+
 	if(b == 17)		
 		new = n_sum + 4;
 	else if(b == 18)
@@ -59,11 +66,12 @@ int century_sum(int b)
 	else
 		printf("Wrong format, please try again!!");
 
+	return new;
+
 }
 
-char day_of_week(int i)
+void day_of_week(int)
 {
-	i = new%7;
 	printf("THE DAY OF THE WEEK OF %d-%d-%d : ", d, m, y);
 	
 	if(i == 0)
